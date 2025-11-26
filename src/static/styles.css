@@ -16,16 +16,71 @@ body {
 }
 
 header {
-  text-align: center;
-  padding: 20px 0;
+  padding: 20px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-text {
+  text-align: center;
+  flex-grow: 1;
+}
+
 header h1 {
   margin-bottom: 10px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 8px;
+}
+
+.user-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-status {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-status button {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.auth-status button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 main {
@@ -197,4 +252,63 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 30px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+}
+
+#login-message {
+  margin-top: 15px;
+}
+
+/* Disabled form styles */
+form:disabled,
+form.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+#auth-required-message {
+  margin-bottom: 15px;
 }
